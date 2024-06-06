@@ -1,0 +1,13 @@
+select * from produtos;
+select * from produtos where q_estoque > 2;
+select codproduto, descricao, valor_unitario from produtos where valor_Unitario >= 15; 
+select codcupom, data_cupom from cupom where data_cupom between '2017-01-01' and '2017-10-05';
+select codcupom, total_liquido , count(*),sum(total_liquido) from produtos_cupom where codcupom = 1;
+select count(*) from produtos;
+select sum(q_estoque) / count(*) from produtos;
+select codproduto, descricao, q_estoque from produtos order by Q_ESTOQUE desc limit 1;
+select codproduto, descricao, q_estoque from produtos order by Q_ESTOQUE asc limit 1;
+select CODPRODUTO, DESCRICAO from produtos where descricao like 'L%';
+select * from cupom where forma_pgto is null;  
+select * from cupom order by CodCupom desc;
+SELECT codcupom, SUM(total_liquido) AS total_produtos FROM produtos_cupom GROUP BY codcupom;
